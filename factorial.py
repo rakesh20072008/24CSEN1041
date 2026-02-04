@@ -1,27 +1,30 @@
+
 def recursive_factorial(n):
-    if n == 0:
+    # Base condition
+    if n == 0 or n == 1:
         return 1
     else:
-        return n * recursive_factorial(n - 1)  # n! = n * (n-1)! [web:31][web:35]
+        return n * recursive_factorial(n - 1)
 
-number = int(input("Enter a non-negative number: "))
 
-factorial_number = 1
+
+
+number = int(input("Enter a non-negative integer: "))
+
 
 if number < 0:
-    print("Entered a negative number. Factorial cannot be determined")
+    print("Factorial is not defined for negative numbers.")
 else:
-    for i in range(1, number + 1):   # loop from 1 to number inclusive [web:38][web:42]
-        factorial_number *= i
-    print(f"Factorial of {number} is {factorial_number}")
+ 
+    factorial = 1
+    for i in range(1, number + 1):
+        factorial = factorial * i
 
-    # recursive method
-    print(f"\nUsing recursive method Factorial of {number} is {recursive_factorial(number)}")
+    print("Factorial using iterative method is:", factorial)
+
 
 # OUTPUT
-Enter a non-negative number: 15
-Factorial of 15 is 1307674368000
-
-Using recursive method Factorial of 15 is 1307674368000
+Enter a non-negative integer: 14
+Factorial using iterative method is: 87178291200
 
 === Code Execution Successful ===
